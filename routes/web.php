@@ -25,3 +25,8 @@ Route::group(['middleware' => 'auth'], function () {
   Route::get('/logout', 'Auth\LoginController@logout');
   Route::get('/account', 'AccountController@view');
 });
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
